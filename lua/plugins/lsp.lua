@@ -13,18 +13,20 @@ return {
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
+		dependencies = { "neovim/nvim-lspconfig", "williamboman/mason.nvim" },
 		config = function()
 			local mason_lspconfig = require("mason-lspconfig")
 			local lspconfig = require("lspconfig")
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+			local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 			-- Setup Mason-LSPconfig
 			mason_lspconfig.setup({
 				ensure_installed = {
 					"lua_ls",
-					"tsserver",
 					"ruff",
 					"jdtls",
+					"basedpyright",
+					"jsonls",
 				},
 			})
 
@@ -49,6 +51,7 @@ return {
 	},
 	{
 		"neovim/nvim-lspconfig",
+		dependencies = { "saghen/blink.cmp" },
 		lazy = false,
 		init = function()
 			vim.g.coq_settings = {
@@ -57,7 +60,9 @@ return {
 			}
 		end,
 		config = function()
-			-- Your LSP settings here
+			require("lspconfig").qmlls.setup({
+				cmd = { "qmlls6", "-E" },
+			})
 		end,
 	},
 }
