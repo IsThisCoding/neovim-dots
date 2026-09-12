@@ -14,17 +14,21 @@ return {
 
 			formatters_by_ft = {
 				lua = { "stylua" },
-				-- svelte = { "prettierd", "prettier", stop_after_first = true },
-				javascript = { "prettierd", "prettier", stop_after_first = true },
+				svelte = { "prettierd", "prettier", stop_after_first = true },
+				javascript = { "biome", "prettierd", "prettier", stop_after_first = true },
 				json = { "prettierd", "prettier" },
-				typescript = { "prettierd", "prettier" },
+				typescript = { "biome", "prettierd", "prettier", stop_after_first = true },
 				java = { "google-java-format" },
-				html = { "prettierd", "prettier" },
+				html = { "oxfmt", "prettierd", "prettier", stop_after_first = true },
 				css = { "prettierd", "prettier" },
 				bash = { "beautysh" },
 				jsonc = { "prettierd", "prettier", stop_after_first = true },
 				c = { "clang-format" },
-				qml = { "prettierd", "prettuer", stop_after_first = true },
+				qml = { "prettierd", "prettier", stop_after_first = true },
+				typst = { "typstyle", "prettytypst", stop_after_first = true },
+				verilog = { "verible" },
+				ocaml = { "ocamlformat" },
+				rust = {},
 			},
 		})
 

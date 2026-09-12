@@ -6,3 +6,7 @@ vim.cmd("set number")
 vim.cmd("set relativenumber")
 vim.g.mapleader = " "
 vim.cmd("set hidden")
+vim.opt.swapfile = false
+map("n", "<leader>q", ":q!<CR>")
+vim.opt.list = true
+vim.opt.listchars:append({ tab = "│ " })

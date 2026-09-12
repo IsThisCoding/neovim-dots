@@ -12,11 +12,15 @@ return {
     Highlight surrnding with sh.
     Change number of neighbor lines with sn (see :h MiniSurround-algorithm). ]]
 
+		require("mini.basics").setup()
 		require("mini.surround").setup()
 		require("mini.operators").setup()
 		require("mini.basics").setup()
 		require("mini.files").setup()
 		require("mini.comment").setup()
+		require("mini.pairs").setup()
+		require("mini.hipatterns").setup()
+
 		local miniclue = require("mini.clue")
 		miniclue.setup({
 			triggers = {

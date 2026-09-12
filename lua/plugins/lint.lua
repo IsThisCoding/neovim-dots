@@ -1,5 +1,9 @@
 return {
 	"mfussenegger/nvim-lint",
+	dependencies = {
+		"rshkarin/mason-nvim-lint",
+		"williamboman/mason.nvim",
+	},
 	event = {
 		"BufReadPre",
 		"BufNewFile",
@@ -7,8 +11,8 @@ return {
 	config = function()
 		local lint = require("lint")
 		lint.linters_by_ft = {
-			--	javascript = { "eslintd" },
-			--	typescript = { "eslintd" },
+			-- javascript = { "biome" },
+			-- typescript = { "biome" },
 			python = { "ruff" },
 			c = { "cpplint" },
 			cpp = { "cpplint" },
